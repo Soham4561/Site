@@ -1,0 +1,37 @@
+{
+  info-json: {
+    test-id: "C-20270",
+    test-title: "Maths Quiz",
+    test-thumbnail: "https://ibb.co/2YSvxQr",
+    test-description: "Mathematics Quiz is a small test administered to know the students' knowledge or it is a short duration test used to know the student's knowledge and understanding in the field of Mathematics.",
+    test-author: "Soham Deogaonkar",
+    submission-time: "",
+  },
+  format-json:{
+    total-questions : "10",
+    total-time : "300",
+  },
+  marking-scheme:{
+    correct: "4",
+    skip: "0",
+    incorrect: "-1"
+  },
+  extra-rules:{
+    
+  },
+  
+  question_data:[
+    {
+      question-no: "",
+      question-id: "",
+      question-text: "",
+      options:[]
+    },
+    {
+      question-no: "",
+      question-id: "",
+      question-text: "",
+      options:[]
+    },
+  ]
+}
