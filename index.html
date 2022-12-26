@@ -8,93 +8,67 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 
 <body>
 
-  <!--Start Page-->
-  <div id="start-page" class="start-page position-absolute top-50 start-50 translate-middle opacity-100">
-    <div class="card w-100">
-      <img id="start-thumbnail" class="card-img-top" src="" alt="Card image cap">
-      <div class="card-body">
-        <h5 id="start-title" class="card-title"></h5>
-        <p id="start-description" class="card-text"></p>
-        <hr>
-        <div>
-          <button id="quit-btn" type="button" class="btn btn-outline-primary float-start">Quit Test</button>
-          <button id="continue-btn" type="button" class=" btn btn-primary float-end">Continue</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="loading" class="position-absolute top-50 start-50 translate-middle">
+    <div class="loader">
+    <div>
+        <ul>
+            <li><svg viewBox="0 0 90 120" fill="currentColor">
+                    <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                </svg></li>
+            <li><svg viewBox="0 0 90 120" fill="currentColor">
+                    <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                </svg></li>
+            <li><svg viewBox="0 0 90 120" fill="currentColor">
+                    <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                </svg></li>
+            <li><svg viewBox="0 0 90 120" fill="currentColor">
+                    <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                </svg></li>
+            <li><svg viewBox="0 0 90 120" fill="currentColor">
+                    <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                </svg></li>
+            <li><svg viewBox="0 0 90 120" fill="currentColor">
+                    <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                </svg></li>
+        </ul>
+    </div><span>Loading</span></div></div>
   
-  <!--rules-page-->
-  <div id="info-page" class="info-page position-absolute top-50 start-50 translate-middle opacity-0">
-    
-    <div class="card h-100 w-100">
+  <div id="content-page" class="content-page position-absolute top-50 start-50 translate-middle">
+    <div class="card w-100 h-100">
       <div class="card-header">
-        <h5>
-          Rules of the Quiz
-        </h5>
+        <h5 class="text-center">On This Day - 26 December</h5>
       </div>
-      <div id="info-rules" class="card-body overflow-auto">
-         <p>1. You will have only <snap class="text-primary">15 second</snap>per each question.</p>
-         <p>
-           2. Total Question:- <snap class="text-primary">25 Question</snap>
-         </p>
-         <p>3. Marking Scheme:
-           <li>Correct Answer : +4</li>
-           <li>No Attempt : 0</li>
-           <li>Negative Marking : -1</li>
-         </p>
+      <div class="card-body">
+        <h4>Historical Event:-</h4>
+        <br>
+        <p><span class="text-primary fw-bold">1492:- </span>1st Spanish settlement La Navidad in the New World is founded by Christopher Columbus (modern Môle-Saint-Nicolas in Haiti)</p>
+        <br>
+        <p><span class="text-primary fw-bold">1620:- </span>Mayflower Pilgrims come ashore in Plymouth Bay, traditionally thought to be at Plymouth Rock, Massachusetts</p>
+        <br>
+        <p><span class="text-primary fw-bold">1792:- </span>Trial of French King Louis XVI, court hears the kings defense brought by Raymond Desèze</p>
+        <br>
+        <p><span class="text-primary fw-bold">1825:- </span>Decembrist uprising in Russia against Tsar Nicholas I begins</p>
+        <br>
+        
+        <h4>Today In Music</h4>
+        <br>
+        
+        <p><span class="text-primary fw-bold">1966:- </span>Jimi Hendrix writes the song "Purple Haze" backstage at the Upper Cut Club, London</p> 
       </div>
-      <div class="card-footer">
-         <button id="back-btn" type="button" class="btn btn-outline-primary float-start">Back
-         </button>
-         <button id="start-btn" type="button" class=" btn btn-primary float-end">Start Test
-         </button>
-        </div>
-      </div>
+    </div>
   </div>
   
-  <!--Test Page-->
-  <div id="test-page" class="test-page opacity-0">
-    <div class="sticky-top">
-      <div class="card">
-        <div class="card-header bg-white">
-          <div class="float-start top-50">
-            <h5>Maths Quiz</h5>
-          </div>
-          <div class="timer float-end">
-                <div class="time_left_txt">Time Left</div>
-                <div id="timer" class="timer_sec">00:00</div>
-            </div>
-            <div id="timer-line" class="time_line"></div>
-            
-        </div>
-      </div>
-    </div>
-    <div class="card m-3">
-      <div class="card-header bg-primary"></div>
-      <div class="card-body bg-white">
-        <h5> Maths Quiz No :- 7</h5>
-      </div>
-    </div>
-    <div id=question-page>
-      
-    </div>
-    <div class="card m-3">
-      <div class="card-footer">
-         <button id="submit-btn" type="button" class=" btn btn-outline-primary float-start">Submit Test
-         </button>
-        </div>
-      
-    </div>
-  </div>
-  <script>
-    
-
-  </script>
-  <script src="script.js" type="module"></script>
+  <script src="index.js"></script>
 </body>
 </html>
+
+  
+  
+  
+
+  
